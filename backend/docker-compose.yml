@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: tweeky_postgres
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: tweeky
+      POSTGRES_USER: tweeky_user
+      POSTGRES_PASSWORD: tweeky_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:

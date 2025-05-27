@@ -1,0 +1,77 @@
+.arrow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    /* Ширина кнопки */
+    height: 50px;
+    /* Высота кнопки */
+    border: 0px solid #007BFF;
+    /* Синяя рамка */
+    background-color: transparent;
+    /* Прозрачный фон */
+    border-radius: 5px;
+    /* Скругленные углы */
+    cursor: pointer;
+    outline: none;
+    /* Убираем обводку при фокусе */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.arrow-button:hover {
+    background-color: #D9D9D969;
+    /* Легкий фон при наведении */
+    border-bottom: 1px solid #142ED8E5;
+    /* Тень */
+}
+
+svg {
+    width: 40px;
+    height: 40px;
+}
+
+path {
+    stroke: #142ED8;
+    /* Цвет обводки */
+    stroke-width: 0.1;
+    /* Толщина обводки */
+}
+
+
+/* Очень большие мониторы (4K и выше) */
+@media (min-width: 1401px) {
+
+}
+
+/* Большие мониторы */
+@media (max-width: 1400px) {
+
+}
+
+/* Ноутбуки и небольшие мониторы */
+@media (max-width: 1200px) {
+    svg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Планшеты (горизонтальная ориентация) и небольшие ноутбуки */
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 576px) {
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* Мобильные устройства (вертикальная ориентация) */
+@media (max-width: 480px) {
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}

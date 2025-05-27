@@ -1,0 +1,61 @@
+.day-view {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 150px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.day-header {
+  position: relative;
+  background-color: rgba(149, 152, 201, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  left: -1px; 
+  gap: 0px; 
+  border-radius: 20px 20px 0px 0px;
+  color: rgb(0, 0, 0);
+}
+
+.day-header.current-day {
+  background-color: #142ED8; 
+  color: white;
+}
+
+.day-date {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.day-name {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+
+.no-animation {
+  cursor: none;
+}
+
+
+.progress-bar {
+  position: absolute; /* Абсолютное позиционирование */
+  bottom: 0; /* Прижимаем к нижнему краю */
+  left: 0; /* На всю ширину */
+  width: 100%; /* Ширина на всю ширину хедера */
+  height: 4px; /* Высота полоски */
+  background-color: #e0e0e0; /* Цвет фона прогресс-бара */
+  border-radius: 0 0 8px 8px; /* Скругление нижних углов */
+}
+
+.progress {
+  height: 100%; /* Высота равна высоте progress-bar */
+  background-color: #76c7c0; /* Цвет прогресса */
+  border-radius: 0 0 8px 8px; /* Скругление нижних углов */
+  transition: width 0.3s ease; /* Плавное изменение ширины */
+}

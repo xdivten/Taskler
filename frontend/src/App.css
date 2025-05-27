@@ -1,0 +1,65 @@
+.stats-page {
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.stats-summary p {
+  font-size: 18px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.assistant-button {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-top: 10px;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.header h1{
+  text-align: center;
+  margin: 0;
+  min-width: 300px;
+}
+
+/* Мобильные устройства (горизонтальная ориентация) */
+@media (max-width: 576px) {
+  .header h1{
+    font-size: 1.6em;
+    min-width: 240px;
+  }
+}
+
+/* Мобильные устройства (вертикальная ориентация) */
+@media (max-width: 480px) {
+  .header h1{
+    font-size: 1.6em;
+    min-width: 240px;
+  }
+}

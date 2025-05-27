@@ -1,0 +1,18 @@
+meta {
+  name: protected_ping
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BaseURL}}/protec_ping/
+  body: json
+  auth: none
+}
+
+headers {
+  accept: application/json
+  Content-Type: application/json
+  X-CSRFToken: RQEp0kkvr1kg19XSpWHymLZwoaFyN0W9
+  ~sessionid: 1bajcghc1trhzr8eue5u01g512xn94om
+}

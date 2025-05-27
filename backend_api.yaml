@@ -1,0 +1,197 @@
+openapi: 3.0.0
+info:
+  title: Task Management API
+  version: "1.0.0"
+  description: API для управления задачами.
+
+paths:
+  /task/:
+    post:
+      summary: Создать новую задачу
+      description: Создает новую задачу на основе переданных данных.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - user_id
+                - name
+              properties:
+                user_id:
+                  type: integer
+                  description: ID пользователя.
+                  example: 1
+                date:
+                  type: string
+                  format: date
+                  description: Дата задачи, но в случае week - это дата создания задачи.
+                  example: "2024-11-18"
+                name:
+                  type: string
+                  description: Название задачи.
+                  example: "Закончить проект"
+                task_type:
+                  type: string
+                  description: Тип задачи (week или fixed).
+                  enum: ["week", "fixed"]
+                  example: "week"
+                order_id:
+                  type: integer
+                  description: Порядковый номер задачи.
+                  example: 1
+                column_id:
+                  type: integer
+                  description: Номер колонки в случае fixed type.
+                  example: 1
+      responses:
+        "200":
+          description: Задача успешно создана.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "400":
+          description: Неверные данные.
+
+  /task/{id}/:
+    delete:
+      summary: Удалить задачу
+      description: Удаляет задачу по заданному ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID задачи.
+      responses:
+        "200":
+          description: Задача успешно удалена.
+        "404":
+          description: Задача не найдена.
+
+    patch:
+      summary: Обновить задачу
+      description: Обновляет частично данные задачи.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID задачи.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: Название задачи.
+                  example: "Новое название задачи"
+                description:
+                  type: string
+                  description: Описание задачи.
+                  example: "Обновленное описание"
+                color:
+                  type: string
+                  description: Цвет задачи (HEX-код).
+                  example: "#33FF57"
+                subtask:
+                  type: array
+                  items:
+                    type: string
+                  description: Список подзадач.
+                  example: ["Обновленная подзадача 1"]
+                done:
+                  type: boolean
+                  description: Статус выполнения задачи.
+                  example: true
+                order_id:
+                  type: integer
+                  description: Порядковый номер задачи.
+                  example: 2
+                task_type:
+                  type: string
+                  description: Тип задачи (week или fixed).
+                  enum: ["week", "fixed"]
+                  example: "fixed"
+      responses:
+        "200":
+          description: Задача успешно обновлена.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Task"
+        "400":
+          description: Неверные данные.
+        "404":
+          description: Задача не найдена.
+
+components:
+  schemas:
+    Task:
+      type: object
+      required:
+        - id
+        - user_id
+        - date
+        - name
+        - color
+        - subtask
+        - done
+        - order_id
+        - task_type
+      properties:
+        id:
+          type: integer
+          description: ID задачи.
+          example: 1
+        user:
+          type: integer
+          description: ID пользователя.
+          example: 1
+        date:
+          type: string
+          format: date
+          description: Дата задачи, но в случае week - это дата создания задачи.
+          example: "2024-11-18"
+        name:
+          type: string
+          description: Название задачи.
+          example: "Закончить проект"
+        description:
+          type: string
+          description: Описание задачи.
+          example: "Завершить все задачи по проекту"
+        color:
+          type: string
+          description: Цвет задачи (HEX-код).
+          example: "#FFFFFF"
+        subtask:
+          type: array
+          items:
+            type: string
+          description: Список подзадач.
+          example: ["Подзадача 1", "Подзадача 2"]
+        done:
+          type: boolean
+          description: Статус выполнения задачи.
+          example: false
+        order_id:
+          type: integer
+          description: Порядковый номер задачи.
+          example: 1
+        column_id:
+          type: integer
+          description: Номер колонки в случае fixed type.
+          example: 1
+        task_type:
+          type: string
+          description: Тип задачи (week или fixed).
+          enum: ["week", "fixed"]
+          example: "week"

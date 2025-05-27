@@ -1,0 +1,11 @@
+meta {
+  name: get user session
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{BaseURL}}/_allauth/browser/v1/auth/session
+  body: none
+  auth: none
+}

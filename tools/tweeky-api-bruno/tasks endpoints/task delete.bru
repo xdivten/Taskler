@@ -1,0 +1,21 @@
+meta {
+  name: task delete
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{BaseURL}}/task/53/
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: rFKzfVb1kgTEnpOQHsrAcpJxFcjy3IbN
+}
+
+body:json {
+  {
+    "strategy": "all"
+  }
+}

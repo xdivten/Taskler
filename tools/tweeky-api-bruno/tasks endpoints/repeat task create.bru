@@ -1,0 +1,27 @@
+meta {
+  name: repeat task create
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{BaseURL}}/repeat_task/
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: rFKzfVb1kgTEnpOQHsrAcpJxFcjy3IbN
+  ~: 
+}
+
+body:json {
+  {
+    "name": "check_sub_title2",
+    "repeat_type": "monthly",
+    "interval": 1,
+    "days_of_month": ["2025-02-10"],
+    "start_date": "2025-02-10",
+    "end_date": "2025-03-17"
+  }
+}

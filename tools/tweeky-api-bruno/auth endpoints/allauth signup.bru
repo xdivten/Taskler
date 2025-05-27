@@ -1,0 +1,24 @@
+meta {
+  name: allauth signup
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{BaseURL}}/_allauth/browser/v1/auth/signup
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: 3XrDuzuZs3B0KyXEYmRJpQ39LiMNEkXt
+  Cookie: csrftoken=3XrDuzuZs3B0KyXEYmRJpQ39LiMNEkXt
+}
+
+body:json {
+  {
+    "email" : "testuser3@mail.ru",
+    "password" : "testuser1234",
+    "password" : "testuser1234"
+  }
+}

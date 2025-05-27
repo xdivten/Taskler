@@ -1,0 +1,22 @@
+meta {
+  name: task create
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BaseURL}}/task/
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: S82zs7cWWBxMePkBA9VUap0AGJxpRQjc
+  Cookie: csrftoken=S82zs7cWWBxMePkBA9VUap0AGJxpRQjc
+}
+
+body:json {
+  {
+    "name": "some new task"
+  }
+}

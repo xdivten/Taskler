@@ -1,0 +1,26 @@
+meta {
+  name: allauth login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{BaseURL}}/_allauth/browser/v1/auth/login
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: umOWwC7RZJoW4s66D4zzqglzC5xeXmD6
+  Cookie: csrftoken=umOWwC7RZJoW4s66D4zzqglzC5xeXmD6
+  ~accept: application/json
+  ~Content-Type: application/json
+  ~Referer: {{BaseURL}}
+}
+
+body:json {
+  {
+    "email" : "k1cker666@yandex.ru",
+    "password" : "ka23kdso"
+  }
+}

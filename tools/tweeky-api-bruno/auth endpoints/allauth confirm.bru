@@ -1,0 +1,24 @@
+meta {
+  name: allauth confirm
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{BaseURL}}/_allauth/browser/v1/auth/email/verify
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: 0ROchrUpbzOr9TnZmxpuU5ZdXKFdg047
+  ~Referer: {{BaseURL}}
+  ~accept: application/json
+  ~Cookie: csrftoken=FHucpDCqGu3sDCDSVPV4XRauvd3ak26i
+}
+
+body:json {
+  {
+    "key": "SHRJ4W"
+  }
+}

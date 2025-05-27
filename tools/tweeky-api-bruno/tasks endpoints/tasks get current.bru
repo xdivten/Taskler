@@ -1,0 +1,20 @@
+meta {
+  name: tasks get current
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{BaseURL}}/tasks/?from_date=2025-02-17&to_date=2025-02-27
+  body: none
+  auth: none
+}
+
+params:query {
+  from_date: 2025-02-17
+  to_date: 2025-02-27
+}
+
+headers {
+  X-CSRFToken: rFKzfVb1kgTEnpOQHsrAcpJxFcjy3IbN
+}

@@ -1,0 +1,16 @@
+meta {
+  name: allauth logout
+  type: http
+  seq: 6
+}
+
+delete {
+  url: {{BaseURL}}/_allauth/browser/v1/auth/session
+  body: none
+  auth: none
+}
+
+headers {
+  X-CSRFToken: Fp7AupuAgiBeKjVXFE4hdqMF8RFC5QSr
+  Cookie: csrftoken=Fp7AupuAgiBeKjVXFE4hdqMF8RFC5QSr
+}

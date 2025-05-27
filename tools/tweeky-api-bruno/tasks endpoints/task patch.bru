@@ -1,0 +1,19 @@
+meta {
+  name: task patch
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{BaseURL}}/task/1/
+  body: json
+  auth: none
+}
+
+headers {
+  X-CSRFToken: bfVPrQcJvXlXfjc1QUORi9hhPf2gEd75
+}
+
+body:json {
+  {"nam": "newname"}
+}

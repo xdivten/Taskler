@@ -1,0 +1,16 @@
+{
+  "name": "tweeky-api",
+  "version": "1",
+  "items": [],
+  "activeEnvironmentUid": "rYZaiQ6uv1BY07vO6f9sM",
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "tweeky-api",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
